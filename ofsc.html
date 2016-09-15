@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" href="styles.css">
+		<title>OFSC</title>
+	</head>
+	<body class="plum-and-pattern-1">
+		<div id="dimmer"></div>
+		<h1 style="color: #ffa1bc; font-weight:bold;font-family:font-style:arial;">OFSC</h1>
+
+		<script>
+		//array of all the button values in a specific order that corresponds with the image numbering order
+		var buttons=['Display Profile Action','Deleting a Display Profile','General Tab: Display Profile',
+		'Screen Configuration: Display Profile','Screen Configuration: Mobility','Business Rules','Work Zone Creation',
+		'Change: Work Zones','Work Skills','Change: Work Skills','Change: Resource Types','Change: Collaboration Groups',
+		'Login Policies','Time Slots','Provider Tree','Customize Dispatch View','Work Order Search','View Filters',
+		'Activities View','Add an Activity','Manage an Activity','Daily Tab','Dashboard','Filters','Routing Profile’s',
+		'Filters in Routing Plans','Technicians Settings','Technician Calendars','Technician Inventories','Locations',
+		'Technician Workzones','Reports Tab'];
+			//iterates through the array and creates a button for each value
+			for(i=0; i<buttons.length;i++){
+				createBtn(i);
+			}
+		//creates a button and associates it with its image numbering
+		function createBtn(i){
+				var btn=document.createElement('INPUT');
+				btn.setAttribute('type','button');
+			try{
+				btn.setAttribute('value',buttons[i]);
+				btn.setAttribute('onclick','showImage('+i+')');//sets 'onclick' for the image needed
+				document.body.appendChild(btn);//adds the button to the body of DOM (Document Object Model)
+			}
+			catch(e){
+				alert("Error: "+e.description);
+			
+			}
+		}
+		//displays image on the screen and dims everything behind it
+		function showImage(id){
+				document.getElementById('p').src= 'img'+id+'.png';
+				document.getElementById('p').style.display='inline';
+
+				dim(true);
+			}
+			//hides image on the screen and removes the dimmed background
+			function hideImage(id){
+				document.getElementById('p').style.display='none';
+				dim(false);
+			}
+			//dims the display when given the value 'true', removes it when given 'false'
+			function dim(bool)
+			{
+				if (typeof bool=='undefined') bool=true; // so you can shorten dim(true) to dim()
+				document.getElementById('dimmer').style.display=(bool?'block':'none');
+			}
+		</script>
+		<!-- Acts as an image holder for the image displayed at real-time, if there's an error in displaying the image 'oops.jpeg' is shown instead. Although upon further -->
+		<img id='p' src='oops.jpeg' onclick="hideImage();" />
+		<input id ='backbtn' type="image" src="home.png" style="display:inline;" onclick='location.href="mtm.html"'/>
+	</body>
+</html>
