@@ -3,16 +3,16 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" href="styles.css">
-		<title>Fleetmatics</title>
+		<title>Section 3</title>
 	</head>
 	<body class="plum-and-pattern-1">
 		<div id="dimmer"></div>
-		<h1 style="color: #ffa1bc; font-weight:bold;font-family:font-style:arial;">Fleetmatics</h1>
+		<h1 style="color: #ffa1bc; font-weight:bold;font-family:font-style:arial;">Section 3</h1>
 
 		<script>
 		var current
 		//array of all the button values in a specific order that corresponds with the image numbering order
-		var buttons=['Dashboard','Reports','Live Map','Replay','Alerts','Administration','Contracts'];
+		var buttons=['Btn 1','Btn 2','Btn 3','Btn 4','Btn 5','Btn 6','Btn 7'];
 		//list of image id numbers that go with the associated button.
 		var img_no=[0,10,21,22,23,27,30];
 		//iterates through the array and creates a button for each value
@@ -71,7 +71,7 @@
 		</script>
 		<!-- Acts as an image holder for the image displayed at real-time, if there's an error in displaying the image 'oops.jpeg' is shown instead-->
 		<input id ='backbtn' type="image" src="home.png" onclick="hideImage();"/>
-		<input id ='backbtn' type="image" src="home.png" style="display:inline;" onclick='location.href="mtm.html"'/>
+		<input id ='backbtn' type="image" src="home.png" style="display:inline;" onclick='location.href="mainpage.html"'/>
 		<img id='p' src='oops.jpeg' onclick="action();" />
 	</body>
 </html>
